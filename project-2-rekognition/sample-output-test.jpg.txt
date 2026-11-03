@@ -1,0 +1,23 @@
+Project 2 - Amazon Rekognition Image Labels Generator
+Test run: 2026-11-02, AWS CloudShell, region us-east-1 (from screenshot tabs)
+Command: python3 detect_labels.py test.jpg
+Script: detect_labels.py (boto3 DetectLabels, MaxLabels=10, MinConfidence=70)
+
+Output (verified from CloudShell screenshot, not invented):
+Image: test.jpg
+Summer: 100.0%
+Nature: 99.6%
+Outdoors: 99.6%
+Sea: 99.6%
+Water: 99.6%
+Sky: 98.8%
+Horizon: 98.8%
+Beach: 98.7%
+Scenery: 89.0%
+Airplane: 84.3%
+
+Notes:
+- 10 labels returned, all at or above the 70% minimum confidence set in the script.
+- This is the script output, distinct from the earlier console demo sample
+  (city-street skateboarder: Road 99.9%, Street 99.9%, Urban 99.9%, Person 98.7%).
+- No S3 bucket, Lambda function, or API Gateway was created for this test.
